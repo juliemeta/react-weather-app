@@ -4,7 +4,9 @@ import axios from "axios";
 export default function Weather(props) {
   function handleResponse(response) {
     alert(
-      `The weather in ${props.city} is ${response.data.temperature.current}°C`
+      `The temperature in ${props.city} is ${Math.round(
+        response.data.temperature.current
+      )}°C`
     );
   }
   let apiKey = "c2t7ea4432f52e0o6d402fd54c5bc269";
