@@ -1,21 +1,11 @@
-import { useState } from "react";
-import "./App.css";
+import "./styles.css";
 import Weather from "./Weather";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-      <Weather city="Odense" />
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
+    <div className="App">
+      <h1>Weather Search</h1>
+      <Weather />
+    </div>
   );
 }
-
-export default App;
