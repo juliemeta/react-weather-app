@@ -61,8 +61,8 @@ export default function Weather(props) {
             </div>
           </div>
 
-          <div className="d-flex">
-            <div className="temperature-and-icon text-center">
+          <div>
+            <div className="temperature-and-icon">
               <span className="temperature-value">
                 {Math.round(weather.temperature)}
                 <span className="temperature-unit align-top">°C</span>

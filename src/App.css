@@ -2,6 +2,8 @@
   font-family: sans-serif;
   max-width: 600px;
   margin: 50px auto;
+  background: #ffffff25;
+  border-radius: 15px;
 }
 
 .App h1 {

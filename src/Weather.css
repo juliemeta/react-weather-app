@@ -3,6 +3,7 @@
   border-color: #fdffab;
   color: #ffaaa5;
   margin-bottom: 35px;
+  box-shadow: 5px 10px rgba(152, 138, 201, 0.1);
 }
 .city-search::placeholder {
   color: #ffaaa5;
@@ -29,6 +30,11 @@ h3.city {
 h4.country {
   color: #ffd3b6;
   -webkit-text-stroke: 0.25px rgb(255, 255, 255);
+}
+
+.temperature-and-icon {
+  display: flex;
+  justify-content: center;
 }
 
 .temperature-value {
