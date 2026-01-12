@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Tokyo");
   const [country, setCountry] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
@@ -18,6 +18,7 @@ export default function Weather(props) {
       description: response.data.condition.description,
       wind: response.data.wind.speed,
       humidity: response.data.temperature.humidity,
+      icon: response.data.condition.icon,
     });
   }
 
@@ -52,17 +53,36 @@ export default function Weather(props) {
     return (
       <div>
         {form}
-        <h3 className="city">{weather.city}</h3>
-        <h4 className="country">({weather.country})</h4>
-        <div className="weather-info">
-          <ul>
-            <li>
-              Temperature is {Math.round(weather.temperature)} degrees celsius
-            </li>
-            <li>Weather is {weather.description}</li>
-            <li>Humidity is {Math.round(weather.humidity)}%</li>
-            <li>Wind is {Math.round(weather.wind)} km/h</li>
-          </ul>
+        <div className="container weather-container">
+          <div className="row">
+            <div className="col-6 city-column">
+              <h3 className="city">{weather.city}</h3>
+              <h4 className="country">({weather.country})</h4>
+            </div>
+
+            <div className="col-6 weather-info-column">
+              <ul>
+                <li>Weather right now is {weather.description}</li>
+                <li>Humidity is {Math.round(weather.humidity)}%</li>
+                <li>Wind speed is {Math.round(weather.wind)} km/h</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="row d-flex align-items-center">
+            <div className="col-6 temperature-column">
+              <div className="temperature-value">
+                {Math.round(weather.temperature)}
+                <span className="temperature-unit align-top">°C</span>
+              </div>
+            </div>
+            <div className="col-6 weather-icon-column">
+              <img
+                src={`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weather.icon}.png`}
+                alt={weather.icon}
+              />
+            </div>
+          </div>
         </div>
       </div>
     );

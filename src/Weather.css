@@ -30,3 +30,19 @@ h4.country {
   color: #ffd3b6;
   -webkit-text-stroke: 0.25px rgb(255, 255, 255);
 }
+
+.temperature-value {
+  font-size: 64px;
+  font-weight: 600;
+}
+
+.temperature-unit {
+  font-size: 25px;
+  position: relative;
+  top: 14px;
+}
+
+.weather-info-column ul {
+  list-style-type: none;
+  padding-left: 0;
+}
