@@ -34,6 +34,9 @@ h4.country {
 .temperature-value {
   font-size: 64px;
   font-weight: 600;
+  color: #ffaaa5;
+  #-webkit-text-stroke: 1px rgb(0, 0, 0);
+  -webkit-text-stroke: 0.25px #ffffff;
 }
 
 .temperature-unit {
@@ -42,7 +45,16 @@ h4.country {
   top: 14px;
 }
 
-.weather-info-column ul {
+.weather-info ul {
   list-style-type: none;
   padding-left: 0;
+}
+
+.weather-info-text {
+  color: #ffd3b6;
+  -webkit-text-stroke: 0.25px #ffffff;
+}
+
+.weather-info-value {
+  -webkit-text-stroke: 0.25px #ffaaa5;
 }

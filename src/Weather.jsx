@@ -55,33 +55,45 @@ export default function Weather(props) {
         {form}
         <div className="container weather-container">
           <div className="row">
-            <div className="col-6 city-column">
+            <div className="city-column">
               <h3 className="city">{weather.city}</h3>
               <h4 className="country">({weather.country})</h4>
             </div>
-
-            <div className="col-6 weather-info-column">
-              <ul>
-                <li>Weather right now is {weather.description}</li>
-                <li>Humidity is {Math.round(weather.humidity)}%</li>
-                <li>Wind speed is {Math.round(weather.wind)} km/h</li>
-              </ul>
-            </div>
           </div>
 
-          <div className="row d-flex align-items-center">
-            <div className="col-6 temperature-column">
-              <div className="temperature-value">
+          <div className="d-flex">
+            <div className="temperature-and-icon text-center">
+              <span className="temperature-value">
                 {Math.round(weather.temperature)}
                 <span className="temperature-unit align-top">°C</span>
-              </div>
-            </div>
-            <div className="col-6 weather-icon-column">
+              </span>
               <img
                 src={`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weather.icon}.png`}
                 alt={weather.icon}
               />
             </div>
+          </div>
+          <div className="weather-info">
+            <ul>
+              <li>
+                <span className="weather-info-text">Weather right now is</span>{" "}
+                <span className="weather-info-value">
+                  {weather.description}
+                </span>
+              </li>
+              <li>
+                <span className="weather-info-text">Humidity is</span>{" "}
+                <span className="weather-info-value">
+                  {Math.round(weather.humidity)}%
+                </span>
+              </li>
+              <li>
+                <span className="weather-info-text">Wind speed is</span>{" "}
+                <span className="weather-info-value">
+                  {Math.round(weather.wind)} km/h
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
