@@ -5,7 +5,8 @@ export default function App() {
   return (
     <div className="App text-center">
       <div className="container">
-        <h1>Weather Search</h1>
+        <h1>⛈ Weather 🌦</h1>
+        <h2>Current & Forecast</h2>
         <Weather />
         <footer>
           This app was coded by Julie M. Jeffries and is{" "}

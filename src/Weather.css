@@ -1,0 +1,32 @@
+.city-search {
+  border-radius: 25px;
+  border-color: #fdffab;
+  color: #ffaaa5;
+  margin-bottom: 35px;
+}
+.city-search::placeholder {
+  color: #ffaaa5;
+}
+
+.btn.search-btn {
+  background: #fdffab;
+  color: #ffaaa5;
+  -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+  border-radius: 25px;
+  margin-left: 5px;
+  box-shadow: 5px 10px rgba(152, 138, 201, 0.1);
+}
+.btn.search-btn:hover {
+  background: #fbfd83;
+  color: #ffaaa5;
+}
+
+h3.city {
+  color: #ffaaa5;
+  -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+}
+
+h4.country {
+  color: #ffd3b6;
+  -webkit-text-stroke: 0.25px rgb(255, 255, 255);
+}
