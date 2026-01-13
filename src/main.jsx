@@ -4,7 +4,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import Footer from "./Footer";
 import "bootstrap/dist/css/bootstrap.css";
-import "./Main.css";
+import "./main.css";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
