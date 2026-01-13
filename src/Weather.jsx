@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import Temperature from "./Temperature";
 import axios from "axios";
-
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -62,10 +62,7 @@ export default function Weather(props) {
           </div>
           <div>
             <div className="temperature-and-icon">
-              <span className="temperature-value">
-                {Math.round(weather.temperature)}
-                <span className="temperature-unit align-top">°C</span>
-              </span>
+              <Temperature celsius={weather.temperature} />
               <img
                 src={`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weather.icon}.png`}
                 alt={weather.icon}
