@@ -56,11 +56,10 @@ export default function Weather(props) {
         <div className="container weather-container">
           <div className="row">
             <div className="city-column">
-              <h3 className="city">{weather.city}</h3>
-              <h4 className="country">({weather.country})</h4>
+              <h1 className="city">{weather.city}</h1>
+              <h2 className="country">{weather.country}</h2>
             </div>
           </div>
-
           <div>
             <div className="temperature-and-icon">
               <span className="temperature-value">
@@ -73,27 +72,45 @@ export default function Weather(props) {
               />
             </div>
           </div>
-          <div className="weather-info">
-            <ul>
-              <li>
-                <span className="weather-info-text">Weather right now is</span>{" "}
-                <span className="weather-info-value">
-                  {weather.description}
-                </span>
-              </li>
-              <li>
-                <span className="weather-info-text">Humidity is</span>{" "}
-                <span className="weather-info-value">
-                  {Math.round(weather.humidity)}%
-                </span>
-              </li>
-              <li>
-                <span className="weather-info-text">Wind speed is</span>{" "}
-                <span className="weather-info-value">
-                  {Math.round(weather.wind)} km/h
-                </span>
-              </li>
-            </ul>
+
+          <div className="container">
+            <div className="row">
+              <div className="col-6 text-end weather-column left-column">
+                <ul>
+                  <li>
+                    <span className="weather-info-text">
+                      Weather right now is
+                    </span>
+                  </li>
+                  <li>
+                    <span className="weather-info-text">Humidity is </span>
+                  </li>
+                  <li>
+                    <span className="weather-info-text">Wind speed is </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="col-6 text-start weather-column right-column">
+                <ul>
+                  <li>
+                    <span className="weather-info-value">
+                      {weather.description}
+                    </span>
+                  </li>
+                  <li>
+                    <span className="weather-info-value">
+                      {Math.round(weather.humidity)}%
+                    </span>
+                  </li>
+                  <li>
+                    <span className="weather-info-value">
+                      {Math.round(weather.wind)} km/h
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

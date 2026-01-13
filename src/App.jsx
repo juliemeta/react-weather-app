@@ -5,18 +5,9 @@ export default function App() {
   return (
     <div className="App text-center">
       <div className="container">
-        <h1>⛈ Weather 🌦</h1>
-        <h2>Current & Forecast</h2>
+        <h1>⛈ Current Weather 🌦</h1>
+        <h2>With Forecast</h2>
         <Weather />
-        <footer>
-          This app was coded by Julie M. Jeffries and is{" "}
-          <a
-            href="https://github.com/juliemeta/react-weather-app"
-            target="_blank"
-          >
-            open-sourced on GitHub.
-          </a>
-        </footer>
       </div>
     </div>
   );

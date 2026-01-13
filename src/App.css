@@ -1,9 +1,11 @@
 .App {
   font-family: sans-serif;
-  max-width: 600px;
-  margin: 50px auto;
+  max-width: 700px;
+  margin: 50px auto 30px;
+  padding: 30px 0 50px 0;
   background: #ffffff25;
   border-radius: 15px;
+  box-shadow: var(--box-shadow);
 }
 
 .App h1 {
@@ -15,10 +17,4 @@
   color: #ffd3b6;
   -webkit-text-stroke: 0.5px black;
   margin-bottom: 35px;
-}
-
-.App footer {
-  font-size: small;
-  color: #ffffff;
-  padding-top: 80px;
 }

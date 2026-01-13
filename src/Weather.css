@@ -1,9 +1,14 @@
+:root {
+  --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
 .city-search {
   border-radius: 25px;
   border-color: #fdffab;
   color: #ffaaa5;
-  margin-bottom: 35px;
-  box-shadow: 5px 10px rgba(152, 138, 201, 0.1);
+  margin-bottom: 50px;
+  padding: 5px 10px;
+  box-shadow: var(--box-shadow);
 }
 .city-search::placeholder {
   color: #ffaaa5;
@@ -15,19 +20,21 @@
   -webkit-text-stroke: 0.5px rgb(0, 0, 0);
   border-radius: 25px;
   margin-left: 5px;
-  box-shadow: 5px 10px rgba(152, 138, 201, 0.1);
+  box-shadow: var(--box-shadow);
 }
 .btn.search-btn:hover {
-  background: #fbfd83;
+  background: #f5f78a;
   color: #ffaaa5;
 }
 
-h3.city {
+h1.city {
   color: #ffaaa5;
   -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+
+  text-decoration: 5px dotted underline #fdffab;
 }
 
-h4.country {
+h2.country {
   color: #ffd3b6;
   -webkit-text-stroke: 0.25px rgb(255, 255, 255);
 }
@@ -41,8 +48,7 @@ h4.country {
   font-size: 64px;
   font-weight: 600;
   color: #ffaaa5;
-  #-webkit-text-stroke: 1px rgb(0, 0, 0);
-  -webkit-text-stroke: 0.25px #ffffff;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.486);
 }
 
 .temperature-unit {
@@ -51,14 +57,22 @@ h4.country {
   top: 14px;
 }
 
-.weather-info ul {
+.weather-column.left-column {
+  padding-right: 2px;
+}
+
+.weather-column.right-column {
+  padding-left: 2px;
+}
+
+.weather-column ul {
   list-style-type: none;
   padding-left: 0;
 }
 
 .weather-info-text {
   color: #ffd3b6;
-  -webkit-text-stroke: 0.25px #ffffff;
+  -webkit-text-stroke: 0.1px #ffffff;
 }
 
 .weather-info-value {
