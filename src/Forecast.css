@@ -1,0 +1,12 @@
+.Forecast ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.Forecast .temp-day {
+  color: red;
+}
+
+.Forecast .temp-night {
+  color: blue;
+}

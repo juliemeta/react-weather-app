@@ -1,5 +1,10 @@
 body {
-  background: #a8e6cf;
+  background: linear-gradient(
+    180deg,
+    rgb(255 170 165) 0%,
+    rgb(168 230 207) 100%
+  );
+  min-height: 100vh;
   margin: 8px;
 }
 
