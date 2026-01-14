@@ -1,7 +1,17 @@
 import React from "react";
 import "./Forecast.css";
+import axios from "axios";
 
 export default function Forecast() {
+  function displayForecast(response) {
+    console.log(response.data);
+  }
+  let apiKey = "c2t7ea4432f52e0o6d402fd54c5bc269";
+  let city = "London";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+
   return (
     <div className="Forecast">
       <div className="container">
@@ -9,46 +19,6 @@ export default function Forecast() {
           <div className="col">
             <ul>
               <li className="weekday">Day 1</li>
-              <li>
-                <span className="temp-day">20°</span>{" "}
-                <span className="temp-night">9°</span>
-              </li>
-              <li className="forecast-condition">Cloudy</li>
-            </ul>
-          </div>
-          <div className="col">
-            <ul>
-              <li className="weekday">Day 2</li>
-              <li>
-                <span className="temp-day">20°</span>{" "}
-                <span className="temp-night">9°</span>
-              </li>
-              <li className="forecast-condition">Cloudy</li>
-            </ul>
-          </div>
-          <div className="col">
-            <ul>
-              <li className="weekday">Day 3</li>
-              <li>
-                <span className="temp-day">20°</span>{" "}
-                <span className="temp-night">9°</span>
-              </li>
-              <li className="forecast-condition">Cloudy</li>
-            </ul>
-          </div>
-          <div className="col">
-            <ul>
-              <li className="weekday">Day 4</li>
-              <li>
-                <span className="temp-day">20°</span>{" "}
-                <span className="temp-night">9°</span>
-              </li>
-              <li className="forecast-condition">Cloudy</li>
-            </ul>
-          </div>
-          <div className="col">
-            <ul>
-              <li className="weekday">Day 5</li>
               <li>
                 <span className="temp-day">20°</span>{" "}
                 <span className="temp-night">9°</span>
