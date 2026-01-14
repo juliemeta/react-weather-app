@@ -112,7 +112,7 @@ export default function Weather(props) {
               </div>
             </div>
           </div>
-          <Forecast />
+          <Forecast city={weather.city} />
         </div>
       </div>
     );
