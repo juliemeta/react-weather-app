@@ -13,6 +13,14 @@ export default function Forecast(props) {
     console.log(response.data);
   }
 
+  function day() {
+    let date = new Date(forecast[0].time * 1000);
+    let day = date.getDay();
+    let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return weekdays[day];
+  }
+
   function icon() {
     let icon = forecast[0].condition.icon;
     let iconUrl = `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`;
@@ -36,7 +44,7 @@ export default function Forecast(props) {
           <div className="row">
             <div className="col">
               <ul>
-                <li className="weekday">Day 1</li>
+                <li className="weekday">{day()}</li>
                 <li>
                   <img src={icon()} alt="{forecast.icon}" />
                 </li>
