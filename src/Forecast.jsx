@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import "./Forecast.css";
 import axios from "axios";
 
@@ -13,6 +13,22 @@ export default function Forecast(props) {
     console.log(response.data);
   }
 
+  function icon() {
+    let icon = forecast[0].condition.icon;
+    let iconUrl = `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`;
+    return `${iconUrl}`;
+  }
+
+  function tempDay() {
+    let temperatureDay = Math.round(forecast[0].temperature.maximum);
+    return `${temperatureDay}°`;
+  }
+
+  function tempNight() {
+    let temperatureNight = Math.round(forecast[0].temperature.minimum);
+    return `${temperatureNight}°`;
+  }
+
   if (loaded) {
     return (
       <div className="Forecast">
@@ -21,14 +37,12 @@ export default function Forecast(props) {
             <div className="col">
               <ul>
                 <li className="weekday">Day 1</li>
-                <li>{forecast[0].condition.icon}</li>
                 <li>
-                  <span className="temp-day">
-                    {Math.round(forecast[0].temperature.maximum)}°
-                  </span>{" "}
-                  <span className="temp-night">
-                    {forecast[0].temperature.minimum}°
-                  </span>
+                  <img src={icon()} alt="{forecast.icon}" />
+                </li>
+                <li>
+                  <span className="temp-day">{tempDay()}</span>{" "}
+                  <span className="temp-night">{tempNight()}</span>
                 </li>
                 <li className="forecast-condition">
                   {forecast[0].condition.description}
