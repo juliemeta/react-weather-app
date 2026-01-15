@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Temperature from "./Temperature";
 import FormattedDate from "./FormattedDate";
 import Forecast from "./Forecast";
@@ -6,8 +6,7 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
-  const [city, setCity] = useState("Tokyo");
-  const [country, setCountry] = useState("");
+  const [city, setCity] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
 
@@ -25,6 +24,18 @@ export default function Weather(props) {
     });
   }
 
+  function searchCity(cityName) {
+    let apiKey = "c2t7ea4432f52e0o6d402fd54c5bc269";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
+  }
+
+  function searchByCoordinates(latitude, longitude) {
+    let apiKey = "c2t7ea4432f52e0o6d402fd54c5bc269";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${latitude}&lon=${longitude}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     let apiKey = "c2t7ea4432f52e0o6d402fd54c5bc269";
@@ -36,6 +47,26 @@ export default function Weather(props) {
   function updateCity(event) {
     setCity(event.target.value);
   }
+
+  // Loading user's geo location at app start
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          searchByCoordinates(
+            position.coords.latitude,
+            position.coords.longitude
+          );
+        },
+        () => {
+          // fallback if no location was found
+          searchCity("Paris");
+        }
+      );
+    } else {
+      searchCity("Paris");
+    }
+  }, []);
 
   let form = (
     <form className="city-search-form" onSubmit={handleSubmit}>
