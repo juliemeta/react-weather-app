@@ -12,13 +12,13 @@
   height: auto;
 }
 
-.Forecast .temp-night {
-  color: #bdffe7;
-  font-weight: 800;
-  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.486);
-}
-
 .Forecast .temp-day {
   color: #64867a;
   font-weight: 600;
+}
+
+.Forecast .temp-night {
+  color: #fdffab;
+  font-weight: 800;
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.486);
 }
