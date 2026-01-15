@@ -1,5 +1,4 @@
 import React from "react";
-import "./FormattedDate.css";
 
 export default function FormattedDate(props) {
   let days = [
@@ -23,11 +22,8 @@ export default function FormattedDate(props) {
   }
 
   return (
-    <div className="current-day-time">
-      <div className="current-weekday">{day}</div>
-      <div className="current-time">
-        {hours}:{minutes}
-      </div>
+    <div className="current-day-time weekday">
+      {day}, {hours}:{minutes}
     </div>
   );
 }

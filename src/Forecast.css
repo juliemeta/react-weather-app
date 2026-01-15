@@ -1,5 +1,4 @@
 .Forecast {
-  border-top: 6px dotted #feffab86;
   padding-top: 25px;
 }
 
@@ -8,10 +7,18 @@
   padding: 0;
 }
 
-.Forecast .temp-day {
-  color: red;
+.forecast-icons img {
+  max-width: 50%;
+  height: auto;
 }
 
 .Forecast .temp-night {
-  color: blue;
+  color: #bdffe7;
+  font-weight: 800;
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.486);
+}
+
+.Forecast .temp-day {
+  color: #64867a;
+  font-weight: 600;
 }

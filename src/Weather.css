@@ -27,16 +27,23 @@
   color: #ffaaa5;
 }
 
+.current-weather-container {
+  border: 6px dotted #feffab4d;
+  padding-top: 20px;
+}
+
 h1.city {
   color: #ffaaa5;
   -webkit-text-stroke: 0.5px rgb(255, 255, 255);
   text-decoration: 6px dotted underline #fdffab;
+  margin-bottom: 0;
 }
 
 h2.country {
   color: #ffd3b6;
   -webkit-text-stroke: 0.25px rgb(255, 255, 255);
   text-decoration: 3px wavy underline #feffab77;
+  margin-bottom: 20px;
 }
 
 .temperature-and-icon {
@@ -52,9 +59,9 @@ h2.country {
 }
 
 .temperature-unit {
-  font-size: 25px;
+  font-size: 17px;
   position: relative;
-  top: 14px;
+  top: 20px;
 }
 
 .weather-column.left-column {
@@ -72,8 +79,25 @@ h2.country {
 
 .weather-info-text {
   color: #ffd3b6;
+  -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.46);
 }
 
 .weather-info-value {
   color: #ffaaa5;
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.144);
+}
+
+.weekday {
+  color: #a8e6cf;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.486);
+}
+
+@media (max-width: 900px) {
+  h1.city {
+    font-size: 45px;
+  }
+
+  h2.country {
+    font-size: 30px;
+  }
 }

@@ -38,7 +38,7 @@ export default function Weather(props) {
   }
 
   let form = (
-    <form onSubmit={handleSubmit}>
+    <form className="city-search-form" onSubmit={handleSubmit}>
       <input
         type="search"
         placeholder="Search for a city... "
@@ -56,21 +56,13 @@ export default function Weather(props) {
     return (
       <div>
         {form}
-        <div className="container weather-container">
+        <div className="container current-weather-container">
           <div className="row">
-            <div className="col city-column">
+            <div className="col-md-6 city-column">
+              <FormattedDate date={weather.date} />
               <h1 className="city">{weather.city}</h1>
               <h2 className="country">{weather.country}</h2>
-              <FormattedDate date={weather.date} />
-            </div>
-            <div className="col">
-              <div className="temperature-and-icon">
-                <Temperature celsius={weather.temperature} />
-                <img
-                  src={`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weather.icon}.png`}
-                  alt={weather.icon}
-                />
-              </div>
+
               <div className="container">
                 <div className="row">
                   <div className="col-6 text-end weather-column left-column">
@@ -78,7 +70,33 @@ export default function Weather(props) {
                       <li>
                         <span className="weather-info-text">Weather is</span>
                       </li>
+                    </ul>
+                  </div>
 
+                  <div className="col-6 text-start weather-column right-column">
+                    <ul>
+                      <li>
+                        <span className="weather-info-value">
+                          {weather.description}
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="temperature-and-icon">
+                <img
+                  src={`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weather.icon}.png`}
+                  alt={weather.icon}
+                />
+                <Temperature celsius={weather.temperature} />
+              </div>
+              <div className="container">
+                <div className="row">
+                  <div className="col-6 text-end weather-column left-column">
+                    <ul>
                       <li>
                         <span className="weather-info-text">Humidity is </span>
                       </li>
@@ -92,11 +110,6 @@ export default function Weather(props) {
 
                   <div className="col-6 text-start weather-column right-column">
                     <ul>
-                      <li>
-                        <span className="weather-info-value">
-                          {weather.description}
-                        </span>
-                      </li>
                       <li>
                         <span className="weather-info-value">
                           {Math.round(weather.humidity)}%
@@ -113,7 +126,8 @@ export default function Weather(props) {
               </div>
             </div>
           </div>
-
+        </div>
+        <div className="forecast-container">
           <Forecast city={weather.city} />
         </div>
       </div>

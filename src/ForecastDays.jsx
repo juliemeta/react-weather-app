@@ -29,15 +29,12 @@ export default function ForecastDays(props) {
     <div className="forecast-days">
       <ul>
         <li className="weekday">{day()}</li>
-        <li>
+        <li className="forecast-icons">
           <img src={icon()} alt={props.data.condition.description} />
         </li>
         <li>
           <span className="temp-day">{tempDay()}</span>{" "}
           <span className="temp-night">{tempNight()}</span>
-        </li>
-        <li className="forecast-condition weather-info-value">
-          {props.data.condition.description}
         </li>
       </ul>
     </div>
