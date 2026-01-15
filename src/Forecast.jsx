@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Forecast.css";
 import axios from "axios";
+import ForecastDays from "./ForecastDays";
 
 export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
@@ -13,50 +14,20 @@ export default function Forecast(props) {
     console.log(response.data);
   }
 
-  function day() {
-    let date = new Date(forecast[0].time * 1000);
-    let day = date.getDay();
-    let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-    return weekdays[day];
-  }
-
-  function icon() {
-    let icon = forecast[0].condition.icon;
-    let iconUrl = `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`;
-    return `${iconUrl}`;
-  }
-
-  function tempDay() {
-    let temperatureDay = Math.round(forecast[0].temperature.maximum);
-    return `${temperatureDay}°`;
-  }
-
-  function tempNight() {
-    let temperatureNight = Math.round(forecast[0].temperature.minimum);
-    return `${temperatureNight}°`;
-  }
-
   if (loaded) {
     return (
       <div className="Forecast">
         <div className="container">
-          <div className="row">
-            <div className="col">
-              <ul>
-                <li className="weekday">{day()}</li>
-                <li>
-                  <img src={icon()} alt="{forecast.icon}" />
-                </li>
-                <li>
-                  <span className="temp-day">{tempDay()}</span>{" "}
-                  <span className="temp-night">{tempNight()}</span>
-                </li>
-                <li className="forecast-condition">
-                  {forecast[0].condition.description}
-                </li>
-              </ul>
-            </div>
+          <div className="row gy-5">
+            {forecast.map(function (dailyForecast, index) {
+              if (index < 5) {
+                return (
+                  <div className="col forecast-column" key={index}>
+                    <ForecastDays data={dailyForecast} />
+                  </div>
+                );
+              }
+            })}
           </div>
         </div>
       </div>

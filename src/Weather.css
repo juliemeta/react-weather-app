@@ -72,9 +72,8 @@ h2.country {
 
 .weather-info-text {
   color: #ffd3b6;
-  -webkit-text-stroke: 0.1px #ffffff;
 }
 
 .weather-info-value {
-  -webkit-text-stroke: 0.25px #ffaaa5;
+  color: #ffaaa5;
 }

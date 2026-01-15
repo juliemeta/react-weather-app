@@ -18,3 +18,9 @@
   -webkit-text-stroke: 0.5px black;
   margin-bottom: 35px;
 }
+
+@media (max-width: 900px) {
+  .App {
+    margin: 0 auto;
+  }
+}

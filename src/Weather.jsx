@@ -58,60 +58,62 @@ export default function Weather(props) {
         {form}
         <div className="container weather-container">
           <div className="row">
-            <div className="city-column">
+            <div className="col city-column">
               <h1 className="city">{weather.city}</h1>
               <h2 className="country">{weather.country}</h2>
+              <FormattedDate date={weather.date} />
             </div>
-          </div>
-          <div>
-            <div className="temperature-and-icon">
-              <Temperature celsius={weather.temperature} />
-              <img
-                src={`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weather.icon}.png`}
-                alt={weather.icon}
-              />
-            </div>
-            <FormattedDate date={weather.date} />
-          </div>
-
-          <div className="container">
-            <div className="row">
-              <div className="col-6 text-end weather-column left-column">
-                <ul>
-                  <li>
-                    <span className="weather-info-text">Weather is</span>
-                  </li>
-
-                  <li>
-                    <span className="weather-info-text">Humidity is </span>
-                  </li>
-                  <li>
-                    <span className="weather-info-text">Wind speed is </span>
-                  </li>
-                </ul>
+            <div className="col">
+              <div className="temperature-and-icon">
+                <Temperature celsius={weather.temperature} />
+                <img
+                  src={`https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${weather.icon}.png`}
+                  alt={weather.icon}
+                />
               </div>
+              <div className="container">
+                <div className="row">
+                  <div className="col-6 text-end weather-column left-column">
+                    <ul>
+                      <li>
+                        <span className="weather-info-text">Weather is</span>
+                      </li>
 
-              <div className="col-6 text-start weather-column right-column">
-                <ul>
-                  <li>
-                    <span className="weather-info-value">
-                      {weather.description}
-                    </span>
-                  </li>
-                  <li>
-                    <span className="weather-info-value">
-                      {Math.round(weather.humidity)}%
-                    </span>
-                  </li>
-                  <li>
-                    <span className="weather-info-value">
-                      {Math.round(weather.wind)} km/h
-                    </span>
-                  </li>
-                </ul>
+                      <li>
+                        <span className="weather-info-text">Humidity is </span>
+                      </li>
+                      <li>
+                        <span className="weather-info-text">
+                          Wind speed is{" "}
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="col-6 text-start weather-column right-column">
+                    <ul>
+                      <li>
+                        <span className="weather-info-value">
+                          {weather.description}
+                        </span>
+                      </li>
+                      <li>
+                        <span className="weather-info-value">
+                          {Math.round(weather.humidity)}%
+                        </span>
+                      </li>
+                      <li>
+                        <span className="weather-info-value">
+                          {Math.round(weather.wind)} km/h
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
           <Forecast city={weather.city} />
         </div>
       </div>

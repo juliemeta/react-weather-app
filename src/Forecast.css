@@ -1,3 +1,8 @@
+.Forecast {
+  border-top: 6px dotted #feffab86;
+  padding-top: 25px;
+}
+
 .Forecast ul {
   list-style-type: none;
   padding: 0;
