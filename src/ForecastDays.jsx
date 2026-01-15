@@ -11,7 +11,7 @@ export default function ForecastDays(props) {
 
   function icon() {
     let icon = props.data.condition.icon;
-    let iconUrl = `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`;
+    let iconUrl = `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`;
     return `${iconUrl}`;
   }
 
